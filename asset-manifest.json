@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f48bf0a6.css",
+    "main.js": "/static/js/main.18b87348.js",
+    "static/js/787.87825699.chunk.js": "/static/js/787.87825699.chunk.js",
+    "static/media/img2.jpg": "/static/media/img2.44bc77602137ab8508a6.jpg",
+    "static/media/img3.jpg": "/static/media/img3.23a8cbe83f109438f7a9.jpg",
+    "static/media/img1.jpg": "/static/media/img1.89a2dbdca0a1ae39eb8a.jpg",
+    "static/media/Inter-Medium.woff": "/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Black.woff": "/static/media/Inter-Black.c6938660eec019fefd68.woff",
+    "static/media/Inter-Regular.woff": "/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/Inter-Medium.woff2": "/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2": "/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
+    "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/ava-panda.jpg": "/static/media/ava-panda.9f9f12ee518e2e67413c.jpg",
+    "static/media/heart-white.svg": "/static/media/heart-white.7913ddfd147a48616b09.svg",
+    "index.html": "/index.html",
+    "static/media/trash.svg": "/static/media/trash.823b0cf1b0b7e9cb7cad.svg",
+    "static/media/heart-black.svg": "/static/media/heart-black.fe17a515669479b1e649.svg",
+    "static/media/edit-button-small.svg": "/static/media/edit-button-small.2f7be95ab48bbff7d88c.svg",
+    "static/media/add-button-big.svg": "/static/media/add-button-big.6f86ece55e54220c5485.svg",
+    "static/media/add-button-small.svg": "/static/media/add-button-small.6f41966c71dd7895857f.svg",
+    "static/media/edit-button-big.svg": "/static/media/edit-button-big.a1892ea72cb87c8fc3aa.svg",
+    "static/media/edit-avatar.svg": "/static/media/edit-avatar.a086f758840ae814ecde.svg",
+    "static/media/close-icon-big.svg": "/static/media/close-icon-big.2ceb783afbab75916ddc.svg",
+    "static/media/close-icon-small.svg": "/static/media/close-icon-small.b793e07c3f4c19e26c11.svg",
+    "main.f48bf0a6.css.map": "/static/css/main.f48bf0a6.css.map",
+    "main.18b87348.js.map": "/static/js/main.18b87348.js.map",
+    "787.87825699.chunk.js.map": "/static/js/787.87825699.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f48bf0a6.css",
+    "static/js/main.18b87348.js"
+  ]
+}
