@@ -1,47 +1,21 @@
 import React from 'react';
-import headerLogo from '../images/logo-pts.png';
-import avatar from '../images/ava-panda.jpg';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
 
 function App() {
+  
+  function handleClosePopup() {
+    const popup = document.querySelector('.popup');
+    const closeButton = document.querySelector('.popup__close');
+    closeButton.addEventListener('click', popup.classList.remove("popup_opened"))
+  }
   return (
     <div className="App">
       <div className='body'>
         <div className="page">
-          <header className="header">
-            <img
-              src={headerLogo}
-              alt="логотип проекта"
-              className="header__logo"
-            />
-          </header>
-          <main className="container" aria-label="страница проектов">
-            <section className="profile">
-              <div className="profile__items">
-                <img
-                  src={avatar}
-                  alt="смешная аватарка"
-                  className="profile__avatar"
-                  name="avatar"
-                />
-                <div className="profile__info">
-                  <div className="profile__info-item">
-                    <h1 className="profile__info-name" name="name">Programming</h1>
-                  </div>
-                  <p className="profile__info-job" name="about">Training Sketches</p>
-                </div>
-              </div>
-              <button
-                className="profile__card-add"
-                type="button"
-                aria-label="добавить проект"
-                title="добавить проект"
-              ></button>
-            </section>
-            <section className="elements" aria-label="мои проекты">
-              <ul className="cards">
-              </ul>
-            </section>
-          </main>
+          <Header />
+          <Main />
           <section className="popup popup_new-place" aria-label="добавление проекта">
             <div className="popup__container popup__container_place">
               <h3 className="popup__title">Новый проект</h3>
@@ -81,6 +55,7 @@ function App() {
                 className="popup__close popup__close_new-place"
                 aria-label="закрыть форму добавления проекта"
                 title="закрыть форму добавления проекта"
+                onClick={handleClosePopup}
               ></button>
             </div>
           </section>			
@@ -116,9 +91,7 @@ function App() {
               ></button>
             </div>
           </section>
-          <footer className="footer">
-            <p className="footer__copyright">&copy; 2023 Olga Akhlamova</p>
-          </footer>
+          <Footer />
         </div>
         <template className="cards-template">
           <li className="card">
