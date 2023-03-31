@@ -10,6 +10,26 @@ function Main() {
     popup.classList.add("popup_opened");
   } 
 
+  function handleTrashClick() {
+    const buttonTrash = document.querySelector('.card__trash');
+    const element = document.querySelector('.card');
+    buttonTrash.addEventListener('click', element.remove());
+  }
+
+  function handleLikeClick() {
+    const buttonLike = document.querySelector('.card__like');
+    const counter = document.querySelector('.card__like-counter');
+    const isLike = buttonLike.classList.contains("card__like_active");
+    buttonLike.addEventListener('click', () => {
+      if (!isLike) {
+        buttonLike.classList.add('card__like_active');
+        counter.textContent = "1"}
+      else {
+        buttonLike.classList.remove('card__like_active');
+        counter.textContent = "0"}
+    })
+  }
+
   return (
     <main className="container" aria-label="страница проектов">
       <section className="profile">
@@ -39,33 +59,42 @@ function Main() {
         <ul className="cards">
         <li className="card">
             <img src={img1} alt="" className="card__image" />
-            <div className="card__trash"></div>
+            <div 
+            className="card__trash"
+            onClick={handleTrashClick}/>
             <div className="card__pitch">
               <h2 className="card__title">Проект 1</h2>
               <div className="card__popular">
-                <button type="button" className="card__like"></button>
+                <button type="button" className="card__like"
+                onClick={handleLikeClick}/>
                 <span className="card__like-counter">0</span>
               </div>
             </div>
           </li>
           <li className="card">
             <img src={img2} alt="" className="card__image" />
-            <div className="card__trash"></div>
+            <div 
+            className="card__trash"
+            onClick={handleTrashClick}/>
             <div className="card__pitch">
               <h2 className="card__title">Проект 2</h2>
               <div className="card__popular">
-                <button type="button" className="card__like"></button>
+                <button type="button" className="card__like"
+                onClick={handleLikeClick} />
                 <span className="card__like-counter">0</span>
               </div>
             </div>
           </li>
           <li className="card">
             <img src={img3} alt="" className="card__image" />
-            <div className="card__trash"></div>
+            <div 
+            className="card__trash"
+            onClick={handleTrashClick}/>
             <div className="card__pitch">
               <h2 className="card__title">Проект 3</h2>
               <div className="card__popular">
-                <button type="button" className="card__like"></button>
+                <button type="button" className="card__like"
+                onClick={handleLikeClick}/>
                 <span className="card__like-counter">0</span>
               </div>
             </div>
