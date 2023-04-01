@@ -3,31 +3,32 @@ import avatar from '../images/ava-panda.jpg';
 import img1 from '../images/img1.jpg';
 import img2 from '../images/img2.jpg';
 import img3 from '../images/img3.jpg';
+// import Card from '../components/Card';
 
 function Main() {
+
   function handleAddProjectClick() {
     const popup = document.querySelector('.popup');
     popup.classList.add("popup_opened");
   } 
 
-  function handleTrashClick() {
-    const buttonTrash = document.querySelector('.card__trash');
+  function handleTrashClick() {      // в таком варианте срабатывает на первой найденной кнопке
+    // а не на той, на которую нажали
     const element = document.querySelector('.card');
-    buttonTrash.addEventListener('click', element.remove());
+    element.remove();
   }
 
-  function handleLikeClick() {
+  function handleLikeClick() {      // в таком варианте срабатывает на первой найденной кнопке
+    // а не на той, на которую нажали
     const buttonLike = document.querySelector('.card__like');
     const counter = document.querySelector('.card__like-counter');
     const isLike = buttonLike.classList.contains("card__like_active");
-    buttonLike.addEventListener('click', () => {
-      if (!isLike) {
-        buttonLike.classList.add('card__like_active');
-        counter.textContent = "1"}
-      else {
-        buttonLike.classList.remove('card__like_active');
-        counter.textContent = "0"}
-    })
+    if (!isLike) {
+      buttonLike.classList.add('card__like_active');
+      counter.textContent = "1"}
+    else {
+      buttonLike.classList.remove('card__like_active');
+      counter.textContent = "0"}
   }
 
   return (
