@@ -12,23 +12,20 @@ function Main() {
     popup.classList.add("popup_opened");
   } 
 
-  function handleTrashClick() {      // в таком варианте срабатывает на первой найденной кнопке
-    // а не на той, на которую нажали
-    const element = document.querySelector('.card');
-    element.remove();
+  function handleTrashClick(evt) {      // работает на нужном элементе
+    evt.currentTarget.closest('.card').remove();
   }
 
-  function handleLikeClick() {      // в таком варианте срабатывает на первой найденной кнопке
-    // а не на той, на которую нажали
-    const buttonLike = document.querySelector('.card__like');
-    const counter = document.querySelector('.card__like-counter');
-    const isLike = buttonLike.classList.contains("card__like_active");
+  function handleLikeClick(evt) {      // работает на нужном элементе
+    const isLike = evt.target.classList.contains("card__like_active");
+    const counter = evt.target.classList.contains('.card__like-counter');
     if (!isLike) {
-      buttonLike.classList.add('card__like_active');
-      counter.textContent = "1"}
-    else {
-      buttonLike.classList.remove('card__like_active');
-      counter.textContent = "0"}
+      evt.target.classList.add('card__like_active');
+      counter.textContent = "1"
+    } else {
+      evt.target.classList.remove('card__like_active');
+      counter.textContent = "0"
+    }
   }
 
   return (
