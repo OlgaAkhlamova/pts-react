@@ -18,7 +18,8 @@ function Main() {
 
   function handleLikeClick(evt) {      // работает на нужном элементе
     const isLike = evt.target.classList.contains("card__like_active");
-    const counter = evt.target.classList.contains('.card__like-counter');
+    // const counter = evt.target.closest('.card__like-counter'); // на это ругается...
+    const counter = document.querySelector('.card__like-counter'); //а так находит первую кнопку
     if (!isLike) {
       evt.target.classList.add('card__like_active');
       counter.textContent = "1"
@@ -65,7 +66,7 @@ function Main() {
               <div className="card__popular">
                 <button type="button" className="card__like"
                 onClick={handleLikeClick}/>
-                <span className="card__like-counter">0</span>
+                <span type="text" className="card__like-counter">0</span>
               </div>
             </div>
           </li>
@@ -79,7 +80,7 @@ function Main() {
               <div className="card__popular">
                 <button type="button" className="card__like"
                 onClick={handleLikeClick} />
-                <span className="card__like-counter">0</span>
+                <span type="text" className="card__like-counter">0</span>
               </div>
             </div>
           </li>
@@ -93,7 +94,7 @@ function Main() {
               <div className="card__popular">
                 <button type="button" className="card__like"
                 onClick={handleLikeClick}/>
-                <span className="card__like-counter">0</span>
+                <span type="text" className="card__like-counter">0</span>
               </div>
             </div>
           </li>
