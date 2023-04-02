@@ -12,14 +12,13 @@ function Main() {
     popup.classList.add("popup_opened");
   } 
 
-  function handleTrashClick(evt) {      // работает на нужном элементе
+  function handleTrashClick(evt) {      
     evt.currentTarget.closest('.card').remove();
   }
 
-  function handleLikeClick(evt) {      // работает на нужном элементе
+  function handleLikeClick(evt) {      
     const isLike = evt.target.classList.contains("card__like_active");
-    // const counter = evt.target.closest('.card__like-counter'); // на это ругается...
-    const counter = document.querySelector('.card__like-counter'); //а так находит первую кнопку
+    const counter= document.getElementById(`${evt.target.id}-s`); 
     if (!isLike) {
       evt.target.classList.add('card__like_active');
       counter.textContent = "1"
@@ -27,6 +26,7 @@ function Main() {
       evt.target.classList.remove('card__like_active');
       counter.textContent = "0"
     }
+    
   }
 
   return (
@@ -64,9 +64,9 @@ function Main() {
             <div className="card__pitch">
               <h2 className="card__title">Проект 1</h2>
               <div className="card__popular">
-                <button type="button" className="card__like"
+                <button type="button" className="card__like" id="one"
                 onClick={handleLikeClick}/>
-                <span type="text" className="card__like-counter">0</span>
+                <span type="text" className="card__like-counter" id="one-s">0</span>
               </div>
             </div>
           </li>
@@ -78,9 +78,9 @@ function Main() {
             <div className="card__pitch">
               <h2 className="card__title">Проект 2</h2>
               <div className="card__popular">
-                <button type="button" className="card__like"
+                <button type="button" className="card__like" id="two"
                 onClick={handleLikeClick} />
-                <span type="text" className="card__like-counter">0</span>
+                <span type="text" className="card__like-counter" id="two-s">0</span>
               </div>
             </div>
           </li>
@@ -92,9 +92,9 @@ function Main() {
             <div className="card__pitch">
               <h2 className="card__title">Проект 3</h2>
               <div className="card__popular">
-                <button type="button" className="card__like"
+                <button type="button" className="card__like" id="three"
                 onClick={handleLikeClick}/>
-                <span type="text" className="card__like-counter">0</span>
+                <span type="text" className="card__like-counter" id="three-s">0</span>
               </div>
             </div>
           </li>
