@@ -1,35 +1,19 @@
 import React from 'react';
 
-function Card(name, link) {
-
-  function handleTrashClick() {
-    const element = document.querySelector('.card');
-    element.remove();
-  }
-
-  function handleLikeClick() {
-    const buttonLike = document.querySelector('.card__like');
-    const counter = document.querySelector('.card__like-counter');
-    const isLike = buttonLike.classList.contains("card__like_active");
-    if (!isLike) {
-      buttonLike.classList.add('card__like_active');
-      counter.textContent = "1"}
-    else {
-      buttonLike.classList.remove('card__like_active');
-      counter.textContent = "0"}
-  }
-
+function Card({card, onTrashClick, onLikeClick}) {
+  
   return (
-    <li className="card">
-      <img src={link} alt={name} className="card__image" />
-      <div className="card__trash"
-      onClick={handleTrashClick}/>
+    <li className="card" key={card.id}>
+      <img src={card.link} alt={card.name} className="card__image" />
+      <div 
+      className="card__trash"
+      onClick={onTrashClick}/>
       <div className="card__pitch">
-        <h2 className="card__title">{name}</h2>
+        <h2 className="card__title">{card.name}</h2>
         <div className="card__popular">
-          <button type="button" className="card__like"
-          onClick={handleLikeClick}/>
-          <span className="card__like-counter">0</span>
+          <button type="button" className="card__like" id={card.id}
+          onClick={onLikeClick}/>
+          <span type="text" className="card__like-counter" id={`${card.id}-s`}>0</span>
         </div>
       </div>
     </li>

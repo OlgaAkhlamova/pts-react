@@ -1,12 +1,13 @@
 import React from 'react';
+import {useRef} from 'react';
 
-function PopupWithForm() {
+function PopupWithForm({onAddProject}) {
 
-  // const popup = document.querySelector('.popup'); //вынесла из handleClosePopup и handleOverlayClick,
-  //но так не работает, поэтому внесла обратно 
-  
-  function handleClosePopup() { 
-    const popup = document.querySelector('.popup'); 
+  const refname = useRef();
+  const reflink = useRef();
+
+  function handleClosePopup(evt) { 
+    const popup = document.querySelector('.popup');
     popup.classList.remove("popup_opened")
   }
 
@@ -18,7 +19,9 @@ function PopupWithForm() {
   }
 
   function handleChangeName() {
+    
     console.log('Название проекта');
+    
   }
 
   function handleChangeLink() {
@@ -27,7 +30,7 @@ function PopupWithForm() {
 
   function handleSubmitProject(evt) { // не работает:
     evt.preventDefault();             // страница перезагружается
-    console.log('На меня нажали')     // надпись не выводится
+   
   }
   return (
     <section className="popup popup_new-place" aria-label="добавление проекта" onClick={handleOverlayClick}>
@@ -43,7 +46,8 @@ function PopupWithForm() {
             id="place-card"
             name="name"
             placeholder="Название"
-            value=""
+            ref={refname}
+            // value={name || ""}
             className="popup__input popup__input_type_designation"
             minLength="2"
             maxLength="30"
@@ -56,7 +60,8 @@ function PopupWithForm() {
             id="link-card"
             name="link"
             placeholder="Ссылка на картинку"
-            value=""
+            ref={reflink}
+            // value={link || ""}
             className="popup__input popup__input_type_card-link"
             onChange={handleChangeLink}
             required

@@ -3,7 +3,8 @@ import avatar from '../images/ava-panda.jpg';
 import img1 from '../images/img1.jpg';
 import img2 from '../images/img2.jpg';
 import img3 from '../images/img3.jpg';
-// import Card from '../components/Card';
+import { initialCards } from '../utils/cards';
+import Card from '../components/Card';
 
 function Main() {
 
@@ -98,6 +99,27 @@ function Main() {
               </div>
             </div>
           </li>
+          {initialCards.map((card) => (
+            <Card
+            card={card}
+            key={card.id}
+            onTrashClick={handleTrashClick}
+            onLikeClick={handleLikeClick}/>
+          //   <li className="card">
+          //   <img src={card.link} alt={card.name} className="card__image" />
+          //   <div 
+          //   className="card__trash"
+          //   onClick={handleTrashClick}/>
+          //   <div className="card__pitch">
+          //     <h2 className="card__title">{card.name}</h2>
+          //     <div className="card__popular">
+          //       <button type="button" className="card__like" id={card.id}
+          //       onClick={handleLikeClick}/>
+          //       <span type="text" className="card__like-counter" id={`${card.id}-s`}>0</span>
+          //     </div>
+          //   </div>
+          // </li>
+          ))}
         </ul>
       </section>
     </main>
