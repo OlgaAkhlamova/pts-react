@@ -7,7 +7,8 @@
   display: inline-block;
   background: 50% no-repeat;
   border: none;
-  background-image: url(../../../images/trash.svg);
+  /* background-image: url(../../../images/trash.svg); */
+  background-image: url(../../../images/info-icon-32x32.png);
   cursor: pointer;
   position: absolute;
 }

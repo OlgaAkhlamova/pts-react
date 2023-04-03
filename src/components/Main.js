@@ -9,12 +9,14 @@ import Card from '../components/Card';
 function Main() {
 
   function handleAddProjectClick() {
-    const popup = document.querySelector('.popup');
+    const popup = document.querySelector('.popup_new-project');
     popup.classList.add("popup_opened");
   } 
 
   function handleTrashClick(evt) {      
-    evt.currentTarget.closest('.card').remove();
+    // evt.currentTarget.closest('.card').remove();
+    const popupDescr = document.querySelector('.popup_description');
+    popupDescr.classList.add("popup_opened");
   }
 
   function handleLikeClick(evt) {      

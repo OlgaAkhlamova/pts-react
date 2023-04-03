@@ -1,8 +1,13 @@
 import React from 'react';
 
-function PopupWithConfirm() {
+function PopupWithConfirm({onClose, onCloseOverlay}) {
+
+  
   return (
-    <section className="popup popup_delete-card" aria-label="подтверждение">
+    <section className="popup popup_delete-card" 
+      id="popup_delete-card"
+      aria-label="подтверждение" 
+      onClick={onCloseOverlay}>
       <div className="popup__container popup__container_delete-card">
         <h3 className="popup__title">Уже уходите?</h3>
         <form
@@ -15,9 +20,11 @@ function PopupWithConfirm() {
         </form>
         <button
           type="button"
+          id="delete-card"
           className="popup__close popup__close_delete-card"
           aria-label="закрыть форму подтверждения"
           title="закрыть форму подтверждения"
+          onClick={onClose}
         />
       </div>
     </section>
